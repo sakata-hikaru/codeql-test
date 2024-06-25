@@ -26,6 +26,7 @@ jobs:
         uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
+          queries: ./ql
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@v2
@@ -34,4 +35,3 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: '/github/workflow'
-          config-file: .github/codeql/codeql-config.yml
