@@ -12,5 +12,5 @@ import java
 import semmle.code.java.metrics.MetricElement
 
 from MetricElement m, Method me
-where m.getCyclomaticComplexity() > 10
+where m.getCyclomaticComplexity() > 0
 select m, me.getDeclaringType().getName() + "." + m.getName() + " has a cyclomatic complexity of " + m.getCyclomaticComplexity()
