@@ -91,3 +91,8 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+        queries: |
+          ./ql/cyclomatic-complexity.ql
+          ./ql/essential-complexity.ql
+          ./ql/cognitive-complexity.ql
+          ./ql/dependency-analysis.ql
