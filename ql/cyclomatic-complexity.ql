@@ -5,5 +5,5 @@
  */
 import java
 
-from Function f
-select f, f.getCyclomaticComplexity() as vG
+from Method m
+select m, m.getCyclomaticComplexity() as vG
