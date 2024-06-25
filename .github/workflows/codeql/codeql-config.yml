@@ -1,0 +1,6 @@
+name: "Custom CodeQL configuration"
+queries:
+  - uses: ./ql/cyclomatic-complexity.ql
+  - uses: ./ql/essential-complexity.ql
+  - uses: ./ql/cognitive-complexity.ql
+  - uses: ./ql/dependency-analysis.ql
