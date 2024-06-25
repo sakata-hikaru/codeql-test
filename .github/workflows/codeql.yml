@@ -34,7 +34,7 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: '/github/workflow'
-          queries: |
+          additional-packs: |
             ./ql/cyclomatic-complexity.ql
             ./ql/essential-complexity.ql
             ./ql/cognitive-complexity.ql
