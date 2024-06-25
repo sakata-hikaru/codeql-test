@@ -1,9 +1,15 @@
 /**
- * @name Cyclomatic Complexity
- * @description Calculate the cyclomatic complexity of functions.
- * @kind metric
+ * @name Functions with high cyclomatic complexity
+ * @description This query identifies functions with a high cyclomatic complexity.
+ * @kind problem
+ * @problem.severity warning
+ * @tags complexity
+ *       maintainability
+ * @id custom-cyclomatic-complexity
  */
+
 import java
 
 from Method m
-select m, m.getCyclomaticComplexity() as vG
+where m.getCyclomaticComplexity() > 0
+select m, m.getDeclaringType().getName() + "." + m.getName() + " has a cyclomatic complexity of " + m.getCyclomaticComplexity()
