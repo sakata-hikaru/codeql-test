@@ -9,8 +9,8 @@
  */
 
 import java
-import java.metrics
+import semmle.code.java.metrics.MetricElement
 
-from Method m
+from MetricElement m, Method me
 where m.getCyclomaticComplexity() > 10
-select m, m.getDeclaringType().getName() + "." + m.getName() + " has a cyclomatic complexity of " + m.getCyclomaticComplexity()
+select m, me.getDeclaringType().getName() + "." + m.getName() + " has a cyclomatic complexity of " + m.getCyclomaticComplexity()
